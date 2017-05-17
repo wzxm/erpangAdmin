@@ -1,7 +1,6 @@
 <template>
-    <div >
+    <div>
         <v-pageTitle vtitle="BasicCharts"></v-pageTitle>
-
 
         <el-row :gutter="20">
             <el-col :xs="24" :sm="24" :md="8" :lg="8">
@@ -16,7 +15,7 @@
             </el-col>
             <el-col :xs="24" :sm="24" :md="8" :lg="8">
                 <el-card class="box-card">
-                   <radarChart></radarChart>
+                    <radarChart></radarChart>
                 </el-card>
             </el-col>
         </el-row>
@@ -32,17 +31,10 @@
                     <funnelChart></funnelChart>
                 </el-card>
             </el-col>
-            
+
         </el-row>
 
-
-
-        
-
-
     </div>
-
-
 
 </template>
 
@@ -53,32 +45,30 @@
     import lineChart from '../charts/lineChart.vue';
     import radarChart from '../charts/radarChart.vue';
     import funnelChart from '../charts/funnelChart.vue';
-   
+
     export default {
-        components:{
-            vPageTitle,barChart,pieChart,lineChart,radarChart,funnelChart
+        components: {
+            vPageTitle, barChart, pieChart, lineChart, radarChart, funnelChart
         },
-        methods: {      
+        methods: {
         }
     }
+
 </script>
 
 <style scoped>
-    .el-col{
-        margin-bottom:16px;
-    }
-    .material-icons{
-        font-size:80px;
-        color:#ddd;
-    }
-   
-    .cart-string{
-        height:100px;
-        padding-top:10px;
-        font-size:1.1rem;
-        
+    .el-col {
+        margin-bottom: 16px;
     }
     
- 
+    .material-icons {
+        font-size: 80px;
+        color: #ddd;
+    }
     
+    .cart-string {
+        height: 100px;
+        padding-top: 10px;
+        font-size: 1.1rem;
+    }
 </style>

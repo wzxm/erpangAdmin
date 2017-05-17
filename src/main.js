@@ -7,12 +7,8 @@ import ElementUI from 'element-ui';
 //引入element-ui的默认CSS样式
 import 'element-ui/lib/theme-default/index.css';
 
-
 Vue.use(ElementUI);
 Vue.config.productionTip = false
-
-
-
 
 /* eslint-disable no-new */
 new Vue({
