@@ -1,17 +1,19 @@
 <template>
     <div class="c-charts">
-        <IEcharts :option="radar"></IEcharts>
+        <IEcharts :option="radar" :loading="loading" @ready="onReady"></IEcharts>
     </div>
 </template>
 
 <script>
-    import vPageTitle from '../common/pageTitle.vue';
     import IEcharts from 'vue-echarts-v3';
+
     export default {
+        name: 'radarChart',
         components: {
-            vPageTitle, IEcharts
+            IEcharts
         },
         data: () => ({
+            loading: true,
             radar: {
                 title: {
                     text: ''
@@ -52,6 +54,13 @@
             }
         }),
         methods: {
+            onReady(instance) {
+                // console.log(instance);
+                this.loading = false;
+            }
+        },
+        created() {
+            
         }
     }
 
@@ -73,7 +82,11 @@
         font-size: 1.1rem;
     }
     
-    .c-charts {
+    .c-charts, .vue-echarts {
+        height: 400px;
+        width: 100%;
+    }
+    .c-charts, .vue-echarts > div > canvas {
         height: 400px;
         width: 100%;
     }

@@ -19,18 +19,16 @@
             <!-- header right area-->
             <el-col :xs="24" :sm="12" :md="4">
                 <div class="website">
-                    <span>Website:</span>
+                    <span>Website: </span>
                     <span>www.erpang.com</span>
                 </div>
             </el-col>
 
-
             <el-col :xs="8" :sm="8" :md="{span:2,offset: 4}">
                 <div class="header-right">
                     <el-col :span="10">
-
                         <!--这是消息的下拉列表 用了element里的 dropdown组件-->
-                        <el-dropdown menu-align="start">
+                        <el-dropdown @command="handleCommand" menu-align="start">
                             <span>
                                 <el-badge :value="5" class="item">
                                     <i class="el-icon-message"></i>
@@ -41,7 +39,7 @@
                                     <span class="pop-title">You have new messages! </span>
                                 </el-dropdown-item>
 
-                                <el-dropdown-item v-for="dialog in dialogs" :key="dialog.time" divided>
+                                <el-dropdown-item v-for="dialog in dialogs" :command="dialog.content" :key="dialog.time" divided>
                                     <div class="pop-div">
                                         <span class="pop-image">
                                             <img :src="dialog.header" width="50px" >
@@ -83,16 +81,11 @@
                                         <span class="task-span task-btn"><el-button type="primary" size="mini">完成</el-button></span>
                                     </div>
                                 </el-dropdown-item>
-
                             </el-dropdown-menu>
                         </el-dropdown>
                     </el-col>
-
-
                 </div>
-
             </el-col>
-
 
             <el-col :xs="8" :sm="8" :md="2">
                 <div class="user-header">
@@ -117,12 +110,9 @@
                                     <span class="setting-icon"><i class="material-icons">assignment_return</i></span>
                                     <span class="setting-string"> Sign out  退出</span>
                                 </div>
-
                             </el-dropdown-item>
-
                         </el-dropdown-menu>
                     </el-dropdown>
-
                 </div>
             </el-col>
         </el-row>
@@ -145,12 +135,13 @@
                     { id: 1, rank: 1, content: '完成JSPangAdmin头部头部组件的编写。', overTime: '2017/3/9' },
                     { id: 2, rank: 2, content: '完成GitHub仓库的初始化工作。', overTime: '2017/3/15' },
                     { id: 3, rank: 3, content: '在阿里云进行网站备案，完成后通知组长。', overTime: '2017/3/20' }
-
                 ]
             }
         },
         methods: {
-
+            handleCommand(command) {
+                console.log('click on item ' + command);
+            }
         }
     }
 
