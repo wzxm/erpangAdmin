@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <transition name="el-fade-in">
-        <router-view v-show="show"></router-view>
-    </transition>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -10,7 +8,6 @@
 export default {
   name: 'app',
   data: () => ({
-    show: true
   })
 }
 </script>

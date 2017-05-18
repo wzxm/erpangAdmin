@@ -6,11 +6,21 @@
                 {{list.content}}
             </li>
         </ul>
+        <br>
+        <el-badge is-dot class="item">Vuex 使用示例</el-badge>
+        <br><br>
+        <el-button type="success">{{getCount}}</el-button>
+        
+        <!--<el-button type="primary">{{getCount}}</el-button>-->
+        <br><br>
+        <el-button type="primary" :plain="true" @click="increment">+</el-button>
+        <el-button type="primary" :plain="true" @click="minus">-</el-button>
     </div>
 </template>
 
 <script>
     import vPageTitle from '../common/pageTitle.vue';
+    import { mapGetters, mapActions } from 'vuex'
 
     export default {
         components: {
@@ -30,10 +40,12 @@
                 ]
             }
         },
-
+        computed: {
+            ...mapGetters(['getCount'])
+        },
         methods: {
+            ...mapActions(['increment', 'minus']),
             onEnter: function () {
-
                 if (this.inputContent != '') {
                     var listContent = { content: this.inputContent, isDone: true };
                     this.listContents.splice(0, 0, listContent);
