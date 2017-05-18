@@ -1,10 +1,10 @@
 <template>
-   <el-table :data="tableData" style="width: 100%" border stripe>
+   <el-table v-loading.body="loading" element-loading-text="拼命加载中" :data="tableData" style="width: 100%" border stripe>
       <el-table-column prop="id"  label="ID"  width="80"></el-table-column>
       <el-table-column prop="userName" label="NAME" width="180"></el-table-column>
       <el-table-column prop="age" label="AGE" width="80"> </el-table-column>
       <el-table-column prop="ability" label="ABILITY"> </el-table-column>
-      <el-table-column prop="value" label="VALUE" align="right"> </el-table-column>
+      <el-table-column prop="value" label="VALUE" align="right"></el-table-column>
     </el-table>
 </template>
 
@@ -12,6 +12,7 @@
     export default {
       data() {
         return {
+          loading: true,
           tableData: [{
             id:1,
             userName: 'JSpang',
@@ -56,6 +57,13 @@
             value:'60%'
           }]
         }
+      },
+      methods: {
+      },
+      created() {
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
       }
     }
 </script>

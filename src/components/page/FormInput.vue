@@ -46,6 +46,18 @@
                                 <el-checkbox label="地推活动" name="type"></el-checkbox>
                             </el-checkbox-group>
                         </el-form-item>
+                        <el-form-item label=" 活动选项">
+                            <el-radio class="radio" v-model="radio" label="1">W酒店</el-radio>
+                            <el-radio class="radio" v-model="radio" label="2">喜来登酒店</el-radio>
+                        </el-form-item>
+                        <el-form-item label="按钮选项">
+                            <el-radio-group v-model="radio3">
+                                <el-radio-button label="W酒店"></el-radio-button>
+                                <el-radio-button label="喜来登"></el-radio-button>
+                                <el-radio-button label="好利来"></el-radio-button>
+                                <el-radio-button label="威斯丁"></el-radio-button>
+                            </el-radio-group>
+                        </el-form-item>
                         <el-form-item>
                             <el-button>立即创建</el-button>
                             <el-button>取消</el-button>
@@ -152,9 +164,18 @@
                     RATE
                     <hr> 用户打分
                     <el-rate v-model="value5"></el-rate>
-                    只读分数
-                    <el-rate v-model="value6" disabled show-text text-color="#ff9900" text-template="{value}">
+                    区分颜色
+                    <el-rate
+                        v-model="value7"
+                        :colors="['#99A9BF', '#F7BA2A', '#FF9900']">
                     </el-rate>
+                    辅助文字
+                    <el-rate
+                        v-model="value8"
+                        show-text>
+                    </el-rate>
+                    只读分数
+                    <el-rate v-model="value6" disabled show-text text-color="#ff9900" text-template="{value}"></el-rate>
                 </el-card>
             </el-col>
         </el-row>
@@ -169,6 +190,8 @@
     export default {
         data() {
             return {
+                radio: '1',
+                radio3: '1',
                 checkList: [],
                 time1: '',
                 startTime: '',
@@ -180,6 +203,8 @@
                 value5: 2,
                 value6: 3.7,
                 input5: '',
+                value7: '',
+                value8: '',
                 select: '',
                 options1: [{ value: '选项1', label: '黄金糕' },
                 { value: '选项2', label: '双皮奶' },

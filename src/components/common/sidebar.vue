@@ -40,6 +40,19 @@
                 </template>
                 <el-menu-item index="BasicTables"> Basic Tables</el-menu-item>
             </el-submenu>
+            
+            <el-submenu index="6">
+                <template slot="title">
+                    <span class="sb-icon"><i class="material-icons el-icon-menu"></i></span>
+                    <span class="sb-cn">Others</span>
+                </template>
+                <el-menu-item index="Dialog">Dialog</el-menu-item>
+                <!--<el-menu-item index="Tooltip">Tooltip</el-menu-item>
+                <el-menu-item index="Popover">Popover</el-menu-item>
+                <el-menu-item index="Card">Card</el-menu-item>
+                <el-menu-item index="Carousel">Carousel</el-menu-item>-->
+                <el-menu-item index="Carousel">Carousel</el-menu-item>
+            </el-submenu>
   
         </el-menu>
     </div>

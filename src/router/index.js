@@ -9,6 +9,8 @@ import BasicTables from '@/components/page/BasicTables';
 import EditorPage from '@/components/page/EditorPage';
 import MarkdownPage from '@/components/page/MarkdownPage';
 import TodoList from '@/components/page/TodoListPage';
+import Carousel from '@/components/others/Carousel';
+import Dialog from '@/components/others/Dialog'
 
 Vue.use(Router)
 
@@ -47,6 +49,12 @@ export default new Router({
         },{
           path:'/TodoList',
           component:TodoList
+        },{
+          path:'/Carousel',
+          component:Carousel
+        },{
+          path:'/Dialog',
+          component:Dialog
         }
       ]
     }

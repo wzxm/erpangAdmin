@@ -14,10 +14,17 @@
     </el-form-item>
     <el-form-item>
       <el-button type="success" @click="onSubmit">查询</el-button>
+      <el-button type="primary" @click="openFullScreen">
+        显示整页加载，3 秒后消失
+      </el-button>
+      <el-button :plain="true" @click="open">打开消息提示</el-button>
+      <el-button :plain="true" @click="open6">成功</el-button>
     </el-form-item>
   </el-form>
 </template>
 <script>
+  import { Loading } from 'element-ui';
+
   export default {
     data() {
       return {
@@ -31,6 +38,22 @@
     methods: {
       onSubmit() {
         console.log('submit!');
+      },
+      open() {
+        this.$message('这是一条消息提示');
+      },
+      open6() {
+        this.$message({
+          showClose: true,
+          message: '恭喜你，这是一条成功消息',
+          type: 'success'
+        });
+      },
+      openFullScreen() {
+        let loading = Loading.service({ fullscreen: true });
+        setTimeout(() => {
+          loading.close()
+        }, 3000);
       }
     }
   }
