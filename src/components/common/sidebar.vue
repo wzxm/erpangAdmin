@@ -47,6 +47,8 @@
                     <span class="sb-cn">Others</span>
                 </template>
                 <el-menu-item index="Dialog">Dialog</el-menu-item>
+                <el-menu-item index="Badge">Badge</el-menu-item>
+                <el-menu-item index="Pagination">Pagination</el-menu-item>
                 <!--<el-menu-item index="Tooltip">Tooltip</el-menu-item>
                 <el-menu-item index="Popover">Popover</el-menu-item>
                 <el-menu-item index="Card">Card</el-menu-item>

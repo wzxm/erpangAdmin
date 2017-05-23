@@ -10,7 +10,9 @@ import EditorPage from '@/components/page/EditorPage';
 import MarkdownPage from '@/components/page/MarkdownPage';
 import TodoList from '@/components/page/TodoListPage';
 import Carousel from '@/components/others/Carousel';
-import Dialog from '@/components/others/Dialog'
+import Dialog from '@/components/others/Dialog';
+import Badge from '@/components/others/Badge';
+import Pagination from '@/components/others/Pagination';
 
 Vue.use(Router)
 
@@ -55,6 +57,12 @@ export default new Router({
         },{
           path:'/Dialog',
           component:Dialog
+        },{
+          path: '/Badge',
+          component: Badge
+        },{
+          path: '/Pagination',
+          component: Pagination
         }
       ]
     }
