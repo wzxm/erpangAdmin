@@ -1,13 +1,16 @@
 <template>
     <div>
-        <v-pageTitle vtitle="Carousel"></v-pageTitle>
+        <v-pageTitle vtitle="Pagination"></v-pageTitle>
 
         <div class="block">
-            <span class="demonstration">页数较少时的效果</span>
-            <el-pagination
-                layout="prev, pager, next"
-                :total="50">
-            </el-pagination>
+            <el-card class="box-card">
+                页数较少时的效果
+                <hr>
+                <el-pagination
+                    layout="prev, pager, next"
+                    :total="50">
+                </el-pagination>
+            </el-card>
         </div>
 
         <br><br>
@@ -15,37 +18,45 @@
         <br>
 
         <div class="block">
-            <span class="demonstration">大于 7 页时的效果</span>
-            <el-pagination
-                layout="prev, pager, next"
-                :total="1000">
-            </el-pagination>
+            <el-card class="box-card">
+                大于 7 页时的效果
+                <hr>
+                <el-pagination
+                    layout="prev, pager, next"
+                    :total="1000">
+                </el-pagination>
+            </el-card>
         </div>
         
         <br><br>
         <hr>
         <br>
 
-        <el-pagination
-            small
-            layout="prev, pager, next"
-            :total="50">
-        </el-pagination>
+        <el-card class="box-card">
+            <el-pagination
+                small
+                layout="prev, pager, next"
+                :total="50">
+            </el-pagination>
+        </el-card>
 
         <br><br>
         <hr>
         <br>
 
         <div class="block">
-            <span class="demonstration">显示总数</span>
-            <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page.sync="currentPage1"
-                :page-size="100"
-                layout="total, prev, pager, next"
-                :total="1000">
-            </el-pagination>
+            <el-card class="box-card">
+                显示总数
+                <hr>
+                <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page.sync="currentPage1"
+                    :page-size="100"
+                    layout="total, prev, pager, next"
+                    :total="1000">
+                </el-pagination>
+            </el-card>
         </div>
 
         <br><br>
@@ -53,16 +64,19 @@
         <br>
 
         <div class="block">
-            <span class="demonstration">调整每页显示条数</span>
-            <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page.sync="currentPage2"
-                :page-sizes="[100, 200, 300, 400]"
-                :page-size="100"
-                layout="sizes, prev, pager, next"
-                :total="1000">
-            </el-pagination>
+            <el-card class="box-card">
+                调整每页显示条数
+                <hr>
+                <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page.sync="currentPage2"
+                    :page-sizes="[100, 200, 300, 400]"
+                    :page-size="100"
+                    layout="sizes, prev, pager, next"
+                    :total="1000">
+                </el-pagination>
+            </el-card>
         </div>
 
         <br><br>
@@ -70,15 +84,18 @@
         <br>
 
         <div class="block">
-            <span class="demonstration">直接前往</span>
-            <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page.sync="currentPage3"
-                :page-size="100"
-                layout="prev, pager, next, jumper"
-                :total="1000">
-            </el-pagination>
+            <el-card class="box-card">
+                直接前往
+                <hr>
+                <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page.sync="currentPage3"
+                    :page-size="100"
+                    layout="prev, pager, next, jumper"
+                    :total="1000">
+                </el-pagination>
+            </el-card>
         </div>
 
         <br><br>
@@ -86,16 +103,19 @@
         <br>
 
         <div class="block">
-            <span class="demonstration">完整功能</span>
-            <el-pagination
-                @size-change="handleSizeChange"
-                @current-change="handleCurrentChange"
-                :current-page="currentPage4"
-                :page-sizes="[100, 200, 300, 400]"
-                :page-size="100"
-                layout="total, sizes, prev, pager, next, jumper"
-                :total="400">
-            </el-pagination>
+            <el-card class="box-card">
+                完整功能
+                <hr>
+                <el-pagination
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    :current-page="currentPage4"
+                    :page-sizes="[100, 200, 300, 400]"
+                    :page-size="100"
+                    layout="total, sizes, prev, pager, next, jumper"
+                    :total="400">
+                </el-pagination>
+            </el-card>
         </div>
 
         <br><br>
@@ -239,5 +259,12 @@
     .item {
         margin-top: 10px;
         margin-right: 40px;
+    }
+    .box-card hr {
+        height: 1px;
+        border: none;
+        border-top: 1px dashed #ccc;
+        margin-bottom: 10px;
+        margin-top: 6px;
     }
 </style>

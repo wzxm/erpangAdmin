@@ -13,6 +13,7 @@ import Carousel from '@/components/others/Carousel';
 import Dialog from '@/components/others/Dialog';
 import Badge from '@/components/others/Badge';
 import Pagination from '@/components/others/Pagination';
+import Transfer from '@/components/others/Transfer';
 
 Vue.use(Router)
 
@@ -63,6 +64,9 @@ export default new Router({
         },{
           path: '/Pagination',
           component: Pagination
+        },{
+          path: '/Transfer',
+          component: Transfer
         }
       ]
     }

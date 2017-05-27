@@ -52,6 +52,40 @@
                 </el-card>
             </el-col>
         </el-row>
+
+        <el-row :gutter="20">
+            <el-col :xs="24" :sm="24" :md="12" :lg="12">
+                <el-card class="box-card">
+                    SINGLE TABLE
+                    <hr>
+                    <SingleTable></SingleTable>
+                </el-card>
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="12" :lg="12">
+                <el-card class="box-card">
+                    MULTIPLE TABLE
+                    <hr>
+                    <MultipleTable></MultipleTable>
+                </el-card>
+            </el-col>
+        </el-row>
+
+        <el-row :gutter="20">
+            <el-col :xs="24" :sm="24" :md="12" :lg="12">
+                <el-card class="box-card">
+                    SPREAD TABLE
+                    <hr>
+                    <SpreadTable></SpreadTable>
+                </el-card>
+            </el-col>
+            <el-col :xs="24" :sm="24" :md="12" :lg="12">
+                <el-card class="box-card">
+                    Rank TABLE
+                    <hr>
+                    <RankTable></RankTable>
+                </el-card>
+            </el-col>
+        </el-row>
     </div>
 </template>
 
@@ -63,10 +97,14 @@
     import condensedTable from '../tables/condensedTable.vue';
     import fixedHeaderTable from '../tables/fixedHeaderTable.vue';
     import fixedColumnTable from '../tables/fixedColumnTable.vue';
+    import SingleTable from '../tables/singleTable.vue';
+    import MultipleTable from '../tables/multipleTable.vue';
+    import SpreadTable from '../tables/spreadTable.vue';
+    import RankTable from '../tables/rankTable.vue';
 
     export default {
         components: {
-            vPageTitle, hoverRow, stripedRow, borderTable, condensedTable, fixedHeaderTable, fixedColumnTable
+            vPageTitle, hoverRow, stripedRow, borderTable, condensedTable, fixedHeaderTable, fixedColumnTable, SingleTable, MultipleTable, SpreadTable, RankTable
         },
         methods: {
         }
